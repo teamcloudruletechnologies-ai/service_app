@@ -267,8 +267,8 @@ class ProfileScreen extends StatelessWidget {
           _InfoTile(
             icon: Icons.location_on_outlined,
             label: 'Primary Saved Address',
-            value: user?.address != null && user!.address.isNotEmpty
-                ? user.address
+            value: (user?.address?.isNotEmpty ?? false)
+                ? user!.address!
                 : 'No address set yet (GPS Auto-Detected)',
           ),
           const SizedBox(height: 32),
